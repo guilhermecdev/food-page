@@ -1,0 +1,96 @@
+/* Header fixo */
+header {
+    width: 100%;
+    padding: 28px 8%;
+    position: sticky;
+    top: 0;
+    background-color: #fff9ea;
+    z-index: 3;
+    box-shadow: 0 0 0 transparent; /* inicial sem sombra */
+    transition: box-shadow 0.3s ease;
+}
+
+/* Navbar */
+#navbar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#navlogo {
+    font-size: 24px;
+    color: #e9a209;
+}
+
+#nav_list {
+    display: flex;
+    list-style: none;
+    gap: 48px;
+}
+
+.nav-item a {
+    text-decoration: none;
+    color: #1d1d1dad;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.nav-item.active a {
+    color: #1d1d1d;
+    border-bottom: 3px solid #ffe100;
+}
+
+/* Mobile button */
+#mobile_btn {
+    display: none;
+}
+
+/* Mobile menu */
+#mobile_menu {
+    display: none;
+}
+
+/* Responsivo */
+@media screen and (max-width: 1170px) {
+    #nav_list,
+    #navbar .btn-default {
+        display: none;
+    }
+
+    #mobile_btn {
+        display: block;
+        border: none;
+        background-color: transparent;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+
+    #mobile_menu.active {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #mobile_nav_list {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin: 12px 0;
+    }
+
+    #mobile_nav_list .nav-item {
+        list-style: none;
+        text-align: center;
+    }
+}
+
+/* Comportamento suave ao rolar */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Corrige o ponto de ancoragem quando o header é fixo */
+section {
+    scroll-margin-top: 140px;
+}
